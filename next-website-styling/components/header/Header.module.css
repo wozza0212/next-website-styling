@@ -3,7 +3,6 @@
   background-color: aliceblue;
   border: 2px solid red;
   height: 5em;
-  position: sticky;
-  top: 0;
-  padding: 1em;
+  top: 40px;
+  z-index: 1000;
 }
