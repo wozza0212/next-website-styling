@@ -1,0 +1,8 @@
+.header {
+  color: red;
+  background-color: aliceblue;
+  border: 2px solid red;
+  height: 5em;
+  top: 40px;
+  z-index: 1000;
+}
