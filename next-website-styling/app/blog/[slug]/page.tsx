@@ -22,17 +22,18 @@ export const metadata: Metadata = {
   description: "By Wozza",
 };
 
-const BlogDetail: NextPage<BlogDetailProps> = async ({ params }) => {
+const BlogDetail: NextPage<BlogDetailProps> = async props => {
+  const params = await props.params;
   const { slug } = params;
   const blog: Blog = await getBlogBySlugWithMarkdown(slug);
   return (
     // <BaseLayout>
+    // {/* </BaseLayout> */}
     <div className="w-2/3 m-auto">
       <article className={`prose lg:prose-lg markdown-image-50`}>
         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       </article>
     </div>
-    // {/* </BaseLayout> */}
   );
 };
 
