@@ -1,0 +1,26 @@
+.headerComponent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.headerList {
+  display: flex;
+  gap: 1rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+}
+.homeLogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+  display: flex;
+  gap: 1rem;
+}
