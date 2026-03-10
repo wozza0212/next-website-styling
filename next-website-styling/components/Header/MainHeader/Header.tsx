@@ -1,8 +1,12 @@
 import Image from "next/image";
-
 import styles from "./Header.module.css";
+import HeaderTabBar from "../HeaderTabBar/HeaderTabBar";
+import { HeaderTabProps } from "../HeaderTab/HeaderTab";
 
-const HeaderComponent = () => {
+interface HeaderProps {
+  tabs: HeaderTabProps[];
+}
+const HeaderComponent = ({ tabs }: HeaderProps) => {
   return (
     <header className={styles.headerComponent}>
       <div className={styles.homeLogo}>
@@ -11,14 +15,7 @@ const HeaderComponent = () => {
         </div>
         <div>My Website</div>
       </div>
-      <div>
-        <ul className={styles.headerList}>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Blog</li>
-        </ul>
-      </div>
+      <HeaderTabBar tabs={tabs} />
     </header>
   );
 };
