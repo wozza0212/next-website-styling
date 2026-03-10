@@ -1,4 +1,19 @@
-.container {
+.container.full {
   width: 100%;
+  margin: auto;
+}
+
+.container.large {
+  width: 90%;
+  margin: auto;
+}
+
+.container.medium {
+  width: 80%;
+  margin: auto;
+}
+
+.container.small {
+  width: 70%;
   margin: auto;
 }

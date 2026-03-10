@@ -1,7 +1,12 @@
 import styles from "./container.module.css";
 
-const ContainerComponent = ({ children }: { children: React.ReactNode }) => {
-  return <div className={styles.container}>{children}</div>;
+interface ContainerProps {
+  children: React.ReactNode
+  size?: "small" | "medium" | "large" | "full"
+}
+
+const ContainerComponent = ({ children, size = "full" }: ContainerProps) => {
+  return <div className={`${styles.container} ${styles[size]}`}>{children}</div>;
 };
 
 export default ContainerComponent;
