@@ -1,5 +1,5 @@
 import styles from "./HeaderTabBar.module.css";
-import { HeaderTabProps } from "../HeaderTab/HeaderTab";
+import HeaderTab, { HeaderTabProps } from "../HeaderTab/HeaderTab";
 interface HeaderTabBarProps {
   tabs: HeaderTabProps[];
 }
@@ -9,9 +9,7 @@ const HeaderTabBar = ({ tabs }: HeaderTabBarProps) => {
     <div>
       <ul className={styles.headerList}>
         {tabs.map((tab) => (
-          <li key={tab.href}>
-            <a href={tab.href}>{tab.title}</a>
-          </li>
+          <HeaderTab key={tab.href} title={tab.title} href={tab.href} />
         ))}
       </ul>
     </div>

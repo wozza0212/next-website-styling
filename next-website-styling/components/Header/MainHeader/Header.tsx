@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import HeaderTabBar from "../HeaderTabBar/HeaderTabBar";
 import { HeaderTabProps } from "../HeaderTab/HeaderTab";
+import myLogo from "../../../public/Images/vista_logos/colored-logo.svg";
 
 interface HeaderProps {
   tabs: HeaderTabProps[];
@@ -9,13 +10,13 @@ interface HeaderProps {
 const HeaderComponent = ({ tabs }: HeaderProps) => {
   return (
     <header className={styles.headerComponent}>
+      <div className={styles.leftSection}>
+        <Image src={myLogo} alt="My Logo" width={60} height={60} />
+        <HeaderTabBar tabs={tabs} />
+      </div>
       <div className={styles.homeLogo}>
-        <div className={styles.logo}>
-          <Image src="/globe.svg" alt="Globe" width={40} height={40} />
-        </div>
         <div>My Website</div>
       </div>
-      <HeaderTabBar tabs={tabs} />
     </header>
   );
 };

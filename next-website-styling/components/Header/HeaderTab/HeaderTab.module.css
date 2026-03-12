@@ -1,0 +1,16 @@
+.headerSingleTab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #333;
+  text-decoration: none;
+}
+
+.headerSingleTab:hover {
+  color: var(--dimGrey);
+  box-shadow: 1px 1px 0 var(--lightGrey);
+  padding: 1em;
+}
