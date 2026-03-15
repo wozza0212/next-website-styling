@@ -1,3 +1,5 @@
+/* Single Tab */
+
 .headerSingleTab {
   display: flex;
   align-items: center;
@@ -13,4 +15,43 @@
   color: var(--dimGrey);
   box-shadow: 1px 1px 0 var(--lightGrey);
   padding: 1em;
+}
+
+/* multi tab */
+
+.headerMultiTab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #333;
+  text-decoration: none;
+}
+
+.headerMultiLinkDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  display: none;
+}
+/* .headerMultiTab:hover .headerMultiLinkDropdown {
+  display: block;
+} */
+.headerMultiLinkDropdownShowContent {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
 }
