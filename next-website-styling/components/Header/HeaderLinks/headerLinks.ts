@@ -10,6 +10,11 @@ const headerTabs = [
   {
     title: "Blog",
     href: "/blog",
+    multiLinks: [
+      { title: "Tech", href: "/blog/tech" },
+      { title: "Lifestyle", href: "/blog/lifestyle" },
+      { title: "Travel", href: "/blog/travel" },
+    ],
   },
   {
     title: "Contact",

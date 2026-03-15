@@ -9,7 +9,12 @@ const HeaderTabBar = ({ tabs }: HeaderTabBarProps) => {
     <div>
       <ul className={styles.headerList}>
         {tabs.map((tab) => (
-          <HeaderTab key={tab.href} title={tab.title} href={tab.href} />
+          <HeaderTab
+            key={tab.href}
+            title={tab.title}
+            href={tab.href}
+            multiLinks={tab.multiLinks}
+          />
         ))}
       </ul>
     </div>
