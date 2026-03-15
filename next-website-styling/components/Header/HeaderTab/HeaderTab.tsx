@@ -1,4 +1,6 @@
+"use client";
 import styles from "./HeaderTab.module.css";
+import { useState } from "react";
 
 export interface HeaderTabProps {
   title: string;
@@ -7,20 +9,33 @@ export interface HeaderTabProps {
 }
 
 const HeaderTab = ({ title, href, multiLinks }: HeaderTabProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   if (multiLinks) {
     return (
-      <li className={styles.headerMultiTab}>
-        <a href={href}>{title}</a>
-        <div className={styles.headerMultiLinkDropdown}>
-        <ul className={styles.headerMultiLinkList}>
-          {multiLinks.map((link) => (
-            <li key={link.href} className={styles.headerMultiLinkItem}>
-              <a href={link.href}>{link.title}</a>
-            </li>
-          ))}
-        </ul>
-        </div>
-      </li>
+      <div
+        onMouseEnter={() => setIsOpen(!isOpen)}
+        onMouseLeave={() => setIsOpen(!isOpen)}
+      
+      >
+        <li className={styles.headerMultiTab}>
+          <a href={href}>{title}</a>
+          <div
+            className={
+              isOpen
+                ? styles.headerMultiLinkDropdownShowContent
+                : styles.headerMultiLinkDropdown
+            }
+          >
+            <ul className={styles.headerMultiLinkList}>
+              {multiLinks.map((link) => (
+                <li key={link.href} className={styles.headerMultiLinkItem}>
+                  <a href={link.href}>{link.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      </div>
     );
   } else {
     return (
