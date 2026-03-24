@@ -14,7 +14,6 @@
 .headerSingleTab:hover {
   color: var(--dimGrey);
   box-shadow: 1px 1px 0 var(--lightGrey);
-  padding: 1em;
 }
 
 /* multi tab */
@@ -45,13 +44,29 @@
 /* .headerMultiTab:hover .headerMultiLinkDropdown {
   display: block;
 } */
+
+.dropdownIcon {
+  margin-left: 0.25rem;
+}
+
 .headerMultiLinkDropdownShowContent {
   display: block;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 10%;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.5rem;
+  min-width: 10em;
+}
+
+.headerMultiLinkItem {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  border: 0.1px solid #ccc;
+  border-radius: 5px;
+}
+
+.headerMultiLinkItem:hover {
+  background-color: #f0f0f0;
 }

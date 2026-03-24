@@ -1,6 +1,7 @@
 "use client";
 import styles from "./HeaderTab.module.css";
 import { useState } from "react";
+import Image from "next/image";
 
 export interface HeaderTabProps {
   title: string;
@@ -15,10 +16,16 @@ const HeaderTab = ({ title, href, multiLinks }: HeaderTabProps) => {
       <div
         onMouseEnter={() => setIsOpen(!isOpen)}
         onMouseLeave={() => setIsOpen(!isOpen)}
-      
       >
         <li className={styles.headerMultiTab}>
           <a href={href}>{title}</a>
+          <Image
+            src="./dropdown-icon.svg"
+            className={styles.dropdownIcon}
+            alt="icon"
+            width={16}
+            height={16}
+          />
           <div
             className={
               isOpen
