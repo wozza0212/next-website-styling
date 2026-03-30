@@ -1,0 +1,4 @@
+.searchInput {
+  border: solid var(--dimGrey) 1px;
+  padding: 0.25rem 0.5rem;
+}
