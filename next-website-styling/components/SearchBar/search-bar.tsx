@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./search-bar.module.css";
+import FormButton from "../Button/Button";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -20,7 +21,9 @@ const SearchBar = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <FormButton version="form" type="submit">
+          Search
+        </FormButton>
       </form>
     </div>
   );

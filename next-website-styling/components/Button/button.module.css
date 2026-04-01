@@ -1,0 +1,18 @@
+.primary {
+  background-color: #0070f3;
+}
+
+.form {
+  gap: 0.5rem;
+  background-color: var(--foreground);
+  padding: 0.5rem 0.5rem;
+  color: var(--background);
+  border: 1px solid var(--foreground);
+  min-width: 5rem;
+  font-weight: bold;
+}
+
+.form:hover {
+  font-weight: bold;
+  box-shadow: 0 8px 16px 0 var(--dimGrey);
+}
