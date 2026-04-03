@@ -12,7 +12,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className={styles.searchBarContainer}>
       <form onSubmit={handleSearch}>
         <input
           className={styles.searchInput}

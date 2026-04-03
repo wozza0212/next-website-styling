@@ -1,3 +1,9 @@
+.searchBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .searchInput {
   border: solid var(--dimGrey) 1px;
   padding: 0.5rem 0.5rem;
