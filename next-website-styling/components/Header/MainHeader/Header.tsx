@@ -17,11 +17,8 @@ const HeaderComponent = ({ tabs }: HeaderProps) => {
         <Image src={myLogo} alt="My Logo" width={60} height={60} />
         <HeaderTabBar tabs={tabs} />
       </div>
-      <div className={styles.searchBar}>
-        <SearchBar />
-      </div>
       <div className={styles.homeLogo}>
-        <div>My Website</div>
+        <SearchBar />
       </div>
     </header>
   );
