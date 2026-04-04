@@ -14,7 +14,6 @@
   color: var(--foreground);
 }
 .homeLogo {
-  font-size: 1.5rem;
   font-weight: bold;
   color: var(--foreground);
   display: flex;
