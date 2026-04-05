@@ -30,8 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <HeaderComponent tabs={headerTabs} />
-        <ContainerComponent>{children}</ContainerComponent>
+        <ContainerComponent size="large">
+          <HeaderComponent tabs={headerTabs} />
+        </ContainerComponent>
+        <ContainerComponent size="medium">{children}</ContainerComponent>
       </body>
     </html>
   );
