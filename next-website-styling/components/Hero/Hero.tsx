@@ -3,16 +3,22 @@ import styles from "./Hero.module.css";
 const HeroSection = () => {
   return (
     <section className={styles.hero}>
-      <div>
-        <h1>Welcome to Our Website</h1>
-        <p>Your one-stop solution for all your needs.</p>
+      <div className={styles.heroText}>
+        <p>
+          Hey there, I'm Tom, my friends call me Wozza or Tommo though. I'm
+          currently employed as a software engineer, so I thought I'd build this
+          site in my spare time ot help me develop my skills and help me feel
+          more like a software engineer. Maybe help a few people along the way
+          too by writing up what i've learned{" "}
+        </p>
       </div>
-      <div>
+      <div className={styles.imageContainer}>
         <Image
-          src="/HomePageImage/profile.JPG"
+          className={styles.heroImage}
+          src="/Images/HomePageImage/profile.JPG"
           alt="Hero Image"
-          width={600}
-          height={400}
+          fill
+          objectFit="cover"
         />
       </div>
     </section>
