@@ -1,0 +1,25 @@
+.hero {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  min-height: 40vh;
+  text-align: left;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.heroText {
+  flex: 1 1;
+  gap: 1rem;
+  justify-content: center;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.imageContainer {
+  flex: 1 1;
+  display: block;
+  position: relative;
+}
