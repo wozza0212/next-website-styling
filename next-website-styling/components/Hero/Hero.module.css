@@ -1,8 +1,9 @@
 .heroContainer {
-  border: 2px solid red;
+  border: 2px solid var(--dimGrey);
   padding: 2rem;
-  border-radius: 5rem;
+  border-radius: 2rem;
   margin-top: 3rem;
+  background-color: var(--lightGrey);
 }
 
 .hero {
