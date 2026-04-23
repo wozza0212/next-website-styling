@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Work_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import ContainerComponent from "@/components/container/Container";
 import headerTabs from "@/components/Header/HeaderLinks/headerLinks";
 import HeaderComponent from "@/components/Header/MainHeader/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const workSans = Work_Sans({
+  variable: "--font-work-sans",
   subsets: ["latin"],
 });
 
@@ -27,9 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${roboto.variable} ${roboto.variable} antialiased`}>
         <ContainerComponent size="large">
           <HeaderComponent tabs={headerTabs} />
         </ContainerComponent>
