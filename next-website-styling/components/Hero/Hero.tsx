@@ -6,13 +6,17 @@ const HeroSection = () => {
       <section className={styles.hero}>
         <div className={styles.heroText}>
           <p>
-            Hey there, I'm Tom, my friends call me Wozza or Tommo though. I'm
-            currently employed as a software engineer, so I thought I'd build
-            this site in my spare time to help me develop my skills and feel
-            more like a software engineer. Maybe help a few people along the way
-            too by writing up what i've learned. Over the years I've done a lot
-            of Typescript,React and Python, I also work with AWS, Azure and
-            Terraform as part of an AWS Platform Team.{" "}
+            Hey there, I'm <span className={styles.standout}>Tom</span>, my
+            friends call me <span className={styles.standout}>Wozza</span>{" "}
+            though. I'm currently employed as a
+            <span className={styles.standout}> Software Engineer</span>, so I
+            thought I'd build this site in my spare time to help me{" "}
+            <span className={styles.standout}> develop</span> my skills. Over
+            the years I've done a lot of{" "}
+            <span className={styles.standout}>Typescript,React and Python</span>
+            , I also work with{" "}
+            <span className={styles.standout}>AWS and Terraform</span> as part
+            of an AWS Platform Team.{" "}
           </p>
         </div>
         <div className={styles.imageContainer}>
