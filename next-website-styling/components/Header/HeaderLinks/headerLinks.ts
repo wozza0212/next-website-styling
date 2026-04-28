@@ -1,3 +1,17 @@
+import { title } from "process";
+import { getAllBlogSlugs, getBlogs } from "../../../lib/blogs";
+
+const slugs = getAllBlogSlugs();
+const blogs = getBlogs();
+
+const blogLinks = [{ title: "All Blogs", href: "/blog" }];
+for (let i = 0; i < 4; i++) {
+  blogLinks.push({
+    title: `${blogs[i].title}`,
+    href: `/blog/${blogs[i].slug}`,
+  });
+}
+
 const headerTabs = [
   {
     title: "Home",
@@ -10,11 +24,7 @@ const headerTabs = [
   {
     title: "Blog",
     href: "/blog",
-    multiLinks: [
-      { title: "Tech", href: "/blog/tech" },
-      { title: "Lifestyle", href: "/blog/lifestyle" },
-      { title: "Travel", href: "/blog/travel" },
-    ],
+    multiLinks: blogLinks,
   },
   {
     title: "Contact",

@@ -75,6 +75,8 @@
   left: 10%;
   background-color: #fff;
   min-width: 10em;
+  z-index: 10;
+  max-width: 20em;
 }
 
 .headerMultiLinkItem {
@@ -84,6 +86,10 @@
   text-decoration: none;
   border: 0.1px solid #ccc;
   border-radius: 5px;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .headerMultiLinkItem:hover {
