@@ -24,14 +24,56 @@ console.log(users); // Output: ["Alice", "Bob", "Charlie"]
 
 let numberAndWords: Array<number | string> = [1, "two", 3, "four"];
 
-let tupleType :[number, number] = [10, 20];
+let tupleType: [number, number] = [10, 20];
 
-let newUser :{
+type newUser = {
+  name: string;
+  age: number;
+  role: {
+    id: number;
     name: string;
-    age: number;
-    role: {
-        id: number;
-        name: string;
-    }
+  };
+};
+
+const user: newUser = {
+  name: "Jane Doe",
+  age: 28,
+  role: {
+    id: 1,
+    name: "Admin",
+  },
+};
+
+let val: {} = "Just a string"; // val can be any non-primitive type
+
+type data = Record<string, number | string>;
+
+const newData: data = {
+  stringKey1: "Value 1",
+  stringKey2: 42,
+  stringKey3: "Value 3",
+};
+
+enum Roles {
+  Admin,
+  User,
+  Guest,
 }
 
+const userRole: Roles = Roles.Admin;
+
+console.log(userRole); // Output: 0 (the index of Admin in the enum)
+
+enum customEnum {
+    Admin = 'Admin',
+    User = 'User',
+    Guest = 'Guest',
+}
+
+const userCustomRole: customEnum = customEnum.Admin;
+
+console.log(userCustomRole); // Output: "Admin"
+
+type buttonType = "primary" | "secondary" | "tertiary";
+
+const newButton: buttonType = "primary";
