@@ -62,7 +62,7 @@ Object Types are used a lot, where you define the type object
 
 An object type can aslo include another object, like here
 
-    let newUser :{
+    type newUser = {
     name: string;
     age: number;
     role: {
@@ -72,3 +72,79 @@ An object type can aslo include another object, like here
     }
 
 where role is another type held within the newUser type
+
+setting this type for a new user would look like this
+
+    type newUser = {
+        name: string;
+        age: number;
+        role: {
+            id: number;
+            name: string;
+        }
+    }
+
+    const user: newUser = {
+        name: "Jane Doe",
+        age: 28,
+        role: {
+            id: 1,
+            name: "Admin"
+            }
+    };
+
+Must not be null type
+
+    let val: {} = 'Just a string'; // val can be any non-primitive type
+
+This means you wouldnt be able to assign the value null to this type, this type is not commonly used
+
+
+Flexible Objects (AKA the record type)
+
+Using the RECORD type will look somewhat like this
+
+    type data = Record<string, number | string>
+
+And what this means is you can set the key for the object as a string, and the values can be set as numbers or strings, for example:
+
+    const newData : data = {
+        stringKey1: "Value 1",
+        stringKey2: 42,
+        stringKey3: "Value 3"
+    }
+
+Working with enums
+Enums let you state a number of specific values
+
+    enum Roles {
+        Admin,
+        User,
+        Guest,
+            }
+
+    const userRole: Roles = Roles.Admin; // 
+    
+    Output: 0 (the index of Admin in the enum)
+You can override the values so they arent just 0,1 and 2 here
+For example, this would output admin
+
+    enum customEnum {
+        Admin = 'Admin',
+        User = 'User',
+        Guest = 'Guest',
+    }
+
+    const userCustomRole: customEnum = customEnum.Admin;
+
+    console.log(userCustomRole); // Output: "Admin"
+
+
+Literal Types are types where you set up specific values, they are generally preferred to enums, so here's a button type example
+
+    type buttonType = "primary" | "secondary" | "tertiary";
+
+    const newButton: buttonType = "primary";
+
+
+
