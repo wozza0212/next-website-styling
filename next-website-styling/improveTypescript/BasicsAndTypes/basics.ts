@@ -1,3 +1,5 @@
+import { error } from "console";
+
 console.log("Hello World! This is a TypeScript file.");
 
 let userName: string;
@@ -65,9 +67,9 @@ const userRole: Roles = Roles.Admin;
 console.log(userRole); // Output: 0 (the index of Admin in the enum)
 
 enum customEnum {
-    Admin = 'Admin',
-    User = 'User',
-    Guest = 'Guest',
+  Admin = "Admin",
+  User = "User",
+  Guest = "Guest",
 }
 
 const userCustomRole: customEnum = customEnum.Admin;
@@ -77,3 +79,40 @@ console.log(userCustomRole); // Output: "Admin"
 type buttonType = "primary" | "secondary" | "tertiary";
 
 const newButton: buttonType = "primary";
+
+let userType: "admin" | "user" | "guest" = "admin";
+console.log(userType) // Output: "admin"
+
+userType = "user";
+console.log(userType) // Output: "user"
+
+
+type Role = "admin" | "user" | "guest";
+
+type User = {
+    name: string;
+    role: Role;
+    age: number;
+    info: {
+        email: string;
+        phone: string;
+    }
+}
+
+const addition = (a: number, b: number): number => {
+    // this function must return a number, if it doesn't, TypeScript will throw an error
+    return a + b;
+}
+
+console.log(addition(10, 20)); // Output: 30
+
+const returnVoid = (message : string): void => {
+    console.log(message);
+}
+
+returnVoid("This function returns void, it doesn't return anything."); // Output: "This function returns void, it doesn't return anything."
+
+const logAndThrowError = (errorMessage: string): never => {
+    console.log(errorMessage);
+    throw new Error(errorMessage);
+}
