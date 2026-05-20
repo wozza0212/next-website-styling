@@ -293,4 +293,55 @@ const player4: newPlayer = {
 
 console.log(player4.describeWeapon?.()); // Output: "No weapon declared."
 ```
+Being specific with literal types
 
+    let userType: "admin" | "user" | "guest" = "admin";
+    console.log(userType) // Output: "admin"
+
+    userType = "user";
+    console.log(userType) // Output: "user"
+
+
+Type aliases, or custom types
+
+    type Role = "admin" | "user" | "guest";
+
+type aliases are vbery useful for object types
+
+    type User = {
+    name: string;
+    role: Role;
+    age: number;
+    info: {
+            email: string;
+            phone: string;
+        }
+    }
+
+Function value return types
+
+```
+const addition = (a: number, b: number): number => {
+    // this function must return a number, if it doesn't, TypeScript will throw an error
+
+    return a + b;
+}
+```
+
+You can return _**void**_ if you don't want the function to return anything, for example, this is usually inferred by typescript though if the function doesn't return anything
+
+```
+const returnVoid = (message : string): void => {
+    console.log(message);
+}
+```
+
+### The _**never**_ type
+
+```
+const logAndThrowError = (errorMessage: string): never => {
+    console.log(errorMessage);
+    throw new Error(errorMessage);
+}
+```
+Typescript infers void for this function, but you can declare it the never type, this is more specific, and we woudl use it here becasue as the functions throws an error, it technically never completes, where as after the conosle log completes in the void function, that function has finished
