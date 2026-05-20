@@ -65,9 +65,9 @@ const userRole: Roles = Roles.Admin;
 console.log(userRole); // Output: 0 (the index of Admin in the enum)
 
 enum customEnum {
-    Admin = 'Admin',
-    User = 'User',
-    Guest = 'Guest',
+  Admin = "Admin",
+  User = "User",
+  Guest = "Guest",
 }
 
 const userCustomRole: customEnum = customEnum.Admin;
@@ -77,3 +77,132 @@ console.log(userCustomRole); // Output: "Admin"
 type buttonType = "primary" | "secondary" | "tertiary";
 
 const newButton: buttonType = "primary";
+
+const subtract = (x: number, y: number): number => {
+  return x - y;
+};
+
+const subtraction = (x: number, y: number): number => {
+  return x - y;
+};
+
+const logSomething = (message: string) => {
+  console.log(message);
+};
+
+const performAction = (cb: (m: string) => void) => {
+  cb("Action Complete");
+};
+
+// in this case () => void is a function type that represents a function that takes no arguments and returns nothing (void).
+
+performAction(logSomething); // Output: "Action Complete"
+
+type User = {
+  name: string;
+  age: number;
+  greeting: (message: string) => void;
+};
+
+const user1: User = {
+  name: "Alice",
+  age: 30,
+  greeting(message: string) {
+    console.log(`${message} ${this.name}!`);
+  },
+};
+
+user1.greeting("Welcome"); // Output: "Welcome Alice!"
+
+type UserWithNulls = {
+  name: string | null;
+  age: number | undefined;
+};
+
+const user2: UserWithNulls = {
+  name: null,
+  age: undefined,
+};
+
+console.log(user2); // Output: { name: null, age: undefined }
+
+type Player = {
+  name: string | undefined; // name can be a string or undefined
+  score: number;
+  weapon: string | null; // weapon can be a string or null
+};
+
+const player1: Player = {
+  name: "Player One",
+  score: 100,
+  weapon: null, // player1 does not have a weapon
+};
+
+const player2: Player = {
+  name: undefined, // player2's name is undefined
+  score: 50,
+  weapon: "Sword", // player2 has a weapon
+};
+
+const greetPlayer = (player: Player) => {
+  player.name?.toUpperCase(); // Using optional chaining to safely access name property
+  console.log(
+    player?.name ? `Hello, ${player.name.toUpperCase()}!` : "Hello, player!",
+  );
+};
+
+greetPlayer(player1); // Output: "Hello, PLAYER ONE!"
+greetPlayer(player2); // Output: "Hello, player!"
+
+const someObject = {
+  name: "Some Object",
+  score: 75,
+  weapon: "Bow",
+} as Player;
+
+greetPlayer(someObject); // Output: "Hello, SOME OBJECT!"
+
+const processSomething = (val: unknown) => {
+  if (typeof val === "string") {
+    val.trim(); // Now TypeScript knows val is a string and allows us to call trim
+    console.log(val.trim()); // Output: trimmed string
+  }
+};
+
+processSomething(9); // No output, as 9 is not an object with a trim method
+processSomething("  Hello World!  "); // Output: "Hello World!"
+
+const generateError = (msg?: string): never => {
+  if (msg) {
+    console.log(msg);
+  }
+  throw Error("Generic Error");
+};
+
+const weaponDecleration = (string?: string): string => {
+  return string ? `Nice ${string}.` : "No weapon declared.";
+};
+
+type newPlayer = {
+  name: string;
+  score: number;
+  weapon?: string;
+  describeWeapon: () => void;
+};
+
+const player3: newPlayer = {
+  name: "Player Three",
+  score: 80,
+  weapon: "Axe",
+  describeWeapon: () => weaponDecleration(player3.weapon),
+};
+
+console.log(player3.describeWeapon?.()); // Output: "Nice Axe!"
+
+const player4: newPlayer = {
+  name: "Player Four",
+  score: 60,
+  describeWeapon: () => weaponDecleration(player4.weapon),
+};
+
+console.log(player4.describeWeapon?.()); // Output: "No weapon declared."

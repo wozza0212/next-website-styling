@@ -147,4 +147,150 @@ Literal Types are types where you set up specific values, they are generally pre
     const newButton: buttonType = "primary";
 
 
+Functions as types
+
+```
+const logSomething = (message: string) => {
+  console.log(message);
+};
+
+const performAction = (cb: (m: string) => void) => {
+  cb("Action Complete");
+};
+
+// in this case () => void is a function type that represents a function that takes no arguments and returns nothing (void).
+
+performAction(logSomething); // Output: "Action Complete"
+```
+
+Better example below when done with a users greeting mesage
+
+```
+type User = {
+  name: string;
+  age: number;
+  greeting: (message: string) => void;
+};
+
+const user1: User = {
+  name: "Alice",
+  age: 30,
+  greeting(message: string) {
+    console.log(`${message} ${this.name}!`);
+  },
+};
+
+user1.greeting("Welcome"); // Output: "Welcome Alice!"
+
+```
+
+### Null and undefined types
+
+Null or undefined typs come in useful, for instance in a game if a weapon hasn't been picked up by the player yet, the weapon would be null, the player name may also be undefined at the when first signing up to play
+
+```
+type Player = {
+    name: string | undefined; // name can be a string or undefined
+    score: number;
+    weapon: string | null; // weapon can be a string or null
+}
+
+const player1: Player = {
+    name: "Player One",
+    score: 100,
+    weapon: null, // player1 does not have a weapon
+}
+```
+
+You can use the ! to ignore a potential null error, this could however cause run time issues, you can also use a ? for optional chaining, however a ? states to only proceed if the avlue isnt null
+
+```
+const player1: Player = {
+  name: "Player One",
+  score: 100,
+  weapon: null, // player1 does not have a weapon
+};
+
+const player2: Player = {
+  name: undefined, // player2's name is undefined
+  score: 50,
+  weapon: "Sword", // player2 has a weapon
+};
+
+const greetPlayer = (player: Player) => {
+  player.name?.toUpperCase(); // Using optional chaining to safely access name property
+  console.log(
+    player?.name ? `Hello, ${player.name.toUpperCase()}!` : "Hello, player!",
+  );
+};
+
+greetPlayer(player1); // Output: "Hello, PLAYER ONE!"
+greetPlayer(player2); // Output: "Hello, player!"
+```
+
+### Type Casting
+
+```
+const someObject = {
+    name: "Some Object",
+    score: 75,
+    weapon: "Bow",  
+} as Player
+
+greetPlayer(someObject); // Output: "Hello, SOME OBJECT!"
+```
+
+### the unknown type
+
+Useful for if you don't know what the incoming value will be, although you will have to cover for all types of value or you may get a runtime error
+
+```
+const processSomething = (val: unknown) => {
+  if (typeof val === "string") {
+    val.trim(); // Now TypeScript knows val is a string and allows us to call trim
+    console.log(val.trim()); // Output: trimmed string
+  }
+};
+
+processSomething(9); // No output, as 9 is not an object with a trim method
+processSomething("  Hello World!  "); // Output: "Hello World!"
+
+```
+
+this can be known as type narrowing, as you are narrowing down the types you will process
+
+
+### Optional Types
+
+These are handy if not all players will have the same properties, some are not necessary
+
+```
+type newPlayer = {
+  name: string;
+  score: number;
+  weapon?: string;
+  describeWeapon: () => void;
+};
+
+const weaponDecleration = (string?: string): string => {
+  return string ? `Nice ${string}.` : "No weapon declared.";
+};
+
+const player3: newPlayer = {
+  name: "Player Three",
+  score: 80,
+  weapon: "Axe",
+  describeWeapon: () => weaponDecleration(player3.weapon),
+};
+
+console.log(player3.describeWeapon?.()); // Output: "Nice Axe!"
+
+const player4: newPlayer = {
+  name: "Player Four",
+  score: 60,
+  describeWeapon: () => weaponDecleration(player4.weapon),
+};
+
+console.log(player4.describeWeapon?.()); // Output: "No weapon declared."
+```
 
