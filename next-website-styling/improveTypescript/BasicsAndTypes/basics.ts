@@ -100,13 +100,13 @@ const performAction = (cb: (m: string) => void) => {
 
 performAction(logSomething); // Output: "Action Complete"
 
-type User = {
+type User2 = {
   name: string;
   age: number;
   greeting: (message: string) => void;
 };
 
-const user1: User = {
+const user1: User2 = {
   name: "Alice",
   age: 30,
   greeting(message: string) {

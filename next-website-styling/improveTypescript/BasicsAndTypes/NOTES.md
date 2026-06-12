@@ -1,49 +1,68 @@
 ### Typescript Basics and Basic Types
 
-To test typescript file:
+### Commands
+Terminal command used to test typescript file:
 
     npx ts-node basics.ts
 
-Example of a basic type
+### Basic Types
+
+#### Basic Type
 
     let userName: string
     userName = 'John Doe'
 
-Can print types out
+We can print out the type of anything using the **typeof**  operator
 
     console.log(typeof userName); // Output: string
     console.log(typeof userId); // Output: number
 
-type is inferred when you assign a value
+#### Inferrence
+
+The type of a variable is inferred when you assign a value to it
 
     let UserId = 36 // infers type number for UserId
 
-what type will a function return
+### Functions
+
+#### Function Returns
+What type will a function return
 
     const add = (x: number, y: number): number => {
     return x + y;
     }; // Function will return a number
 
-If you're not sure about type you can use 'any' type, this typ should genuinely be avoided though
+### Types of Types
+
+#### The any type
+If you're not sure about type you can use **any** type, although this type should genuinely be avoided, as it defeats the objkect of using typescript
+
+If we set the type of age to any we can use either numbers or strings
 
     let age: any;
     age = 30; // age is a number
     age = "30"; // age is a string
 
-Union Types are great for flexibility
+#### Union Types
+
+Union type let us say this type or that type they are great for flexibility
+
+In the example below we're allowing age to be a number or a string, this could come in handy if a variable may be undefined at some stage
 
     let age: number | string
 
-You can user array types for arrays
+#### Array Types
+You can user array types for arrays, this is shown by setting square brackets **[]** after the type 
 
     let users: string[] = ["Alice", "Bob", "Charlie"];
     console.log(users); // Output: ["Alice", "Bob", "Charlie"]
 
-Uou can also combine aray types and Union types
+It is also possible to combine **array** types and **Union** types
 
     let numberAndWords: (number | string)[] = [1, "two", 3, "four"];
 
-There is another way of writing the above by using a generic type, this type is a little more advanced though
+#### Generic Types
+There is another way of writing the above by using a **generic** type, this type is a little more advanced though
 
     let numberAndWords: Array<(number | string)> = [1, "two", 3, "four"];
 
