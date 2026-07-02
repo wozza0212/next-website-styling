@@ -81,4 +81,4 @@ tsc
  in order to compile everything
 
  ### Installation of packages
- use npm install or yarn add
+ use npm install or yarn add to install packages
