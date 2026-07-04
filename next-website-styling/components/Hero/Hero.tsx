@@ -8,15 +8,24 @@ const HeroSection = () => {
           <p>
             Hey there, I'm <span className={styles.standout}>Tom</span>, my
             friends call me <span className={styles.standout}>Wozza</span>{" "}
-            though. I'm currently employed as a
-            <span className={styles.standout}> Software Engineer</span>, so I
-            thought I'd build this site in my spare time to help me{" "}
-            <span className={styles.standout}> develop</span> my skills. Over
-            the years I've done a lot of{" "}
-            <span className={styles.standout}>Typescript,React and Python</span>
-            , I also work with{" "}
-            <span className={styles.standout}>AWS and Terraform</span> as part
-            of an AWS Platform Team.{" "}
+            though
+            <br />
+            I've built this site using{" "}
+            <span className={styles.standout}>Next.js</span> and{" "}
+            <span className={styles.standout}>TypeScript</span> to help develop
+            my design and engineering skills
+            <br />
+            It's been deployed using{" "}
+            <span className={styles.standout}>AWS</span>,{" "}
+            <span className={styles.standout}>Terraform</span> and{" "}
+            <span className={styles.standout}>GitHub Actions</span>.
+            <br />
+            I've tried to document my journey and the decisions in the{" "}
+            <span className={styles.standout}>Blog</span> posts, coupled with
+            some helpful guides
+            <br />
+            Enjoy your stay and feel free to reach out if you have any{" "}
+            <span className={styles.standout}>questions</span>.
           </p>
         </div>
         <div className={styles.imageContainer}>
