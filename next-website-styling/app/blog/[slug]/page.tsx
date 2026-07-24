@@ -1,7 +1,6 @@
 import { Metadata, NextPage } from "next/types";
 import { getAllBlogSlugs, getBlogBySlugWithMarkdown } from "../../../lib/blogs";
 import { Blog } from "../../../interfaces/Blog";
-// import BaseLayout from "@/components/Layouts/base-layout";
 
 export const generateStaticParams = async () => {
   const slugs = getAllBlogSlugs();
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
   description: "By Wozza",
 };
 
-const BlogDetail: NextPage<BlogDetailProps> = async props => {
+const BlogDetail: NextPage<BlogDetailProps> = async (props) => {
   const params = await props.params;
   const { slug } = params;
   const blog: Blog = await getBlogBySlugWithMarkdown(slug);

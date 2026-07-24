@@ -2,12 +2,24 @@
 import styles from "./HeaderTab.module.css";
 import { useState } from "react";
 import Image from "next/image";
-
+import dropdownIcon from "../../../public/dropdown-icon.svg";
 export interface HeaderTabProps {
   title: string;
   href: string;
   multiLinks?: { title: string; href: string }[];
 }
+
+const imageLoader = ({
+  src,
+  width,
+  quality,
+}: {
+  src: string;
+  width: number;
+  quality?: number;
+}) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
+};
 
 const HeaderTab = ({ title, href, multiLinks }: HeaderTabProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,11 +32,12 @@ const HeaderTab = ({ title, href, multiLinks }: HeaderTabProps) => {
         <li className={styles.headerMultiTab}>
           <a href={href}>{title}</a>
           <Image
-            src="./dropdown-icon.svg"
+            src={dropdownIcon}
             className={styles.dropdownIcon}
             alt="icon"
             width={16}
             height={16}
+            loader={imageLoader}
           />
           <div
             className={
