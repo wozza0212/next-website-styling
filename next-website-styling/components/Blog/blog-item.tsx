@@ -18,7 +18,7 @@ type BlogPost = {
 const BlogItem: FunctionComponent<Props> = (props: Props) => {
   const { post, index } = props;
   return (
-    <div className="group">
+    <div className="group border rounded-lg p-4 bg-gray-100 h-100 hover:bg-gray-300 transition duration-300 ease-in-out">
       <Link href={`/blog/${post.slug}`}>
         <div
           key={index}
@@ -36,10 +36,14 @@ const BlogItem: FunctionComponent<Props> = (props: Props) => {
         </div>
         <div className="mt-4 flex justify-between">
           <div>
-            <h2 className="text-lg text-black font-bold">{post.title}</h2>
-            <h2 className="text-sm text-white font-bold">{post.author}</h2>
+            <h2 className="text-lg text-black font-bold h-20">{post.title}</h2>
+            <h2 className="text-sm text-white font-bold h-0.5">
+              {post.author}
+            </h2>
             <p className="mt-1 text-md text-gray-900">{post.date}</p>
-            <p className="mt-1 text-md text-gray-900">{post.description}</p>
+            <p className="mt-1 text-md text-gray-900 line-clamp-3">
+              {post.description}
+            </p>
           </div>
         </div>
       </Link>

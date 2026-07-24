@@ -1,7 +1,5 @@
-import { title } from "process";
-import { getAllBlogSlugs, getBlogs } from "../../../lib/blogs";
+import { getBlogs } from "../../../lib/blogs";
 
-const slugs = getAllBlogSlugs();
 const blogs = getBlogs();
 
 const blogLinks = [{ title: "All Blogs", href: "/blog" }];
