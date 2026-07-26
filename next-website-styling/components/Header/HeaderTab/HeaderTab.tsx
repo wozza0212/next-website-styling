@@ -38,7 +38,10 @@ const HeaderTab = ({ title, href, multiLinks }: HeaderTabProps) => {
             width={16}
             height={16}
             loader={imageLoader}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <div
             className={
               isOpen

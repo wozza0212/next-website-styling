@@ -28,9 +28,10 @@ const BlogItem: FunctionComponent<Props> = (props: Props) => {
             <Image
               src={post.image}
               alt={post.title}
-              style={{ objectFit: "cover" }}
               fill
               className="rounded-lg hover:cursor-pointer"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager"
             />
           </div>
         </div>

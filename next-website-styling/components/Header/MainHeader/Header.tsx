@@ -14,7 +14,15 @@ const HeaderComponent = ({ tabs }: HeaderProps) => {
   return (
     <header className={styles.headerComponent}>
       <div className={styles.leftSection}>
-        <Image src={myLogo} alt="My Logo" width={60} height={60} />
+        <Image
+          src={myLogo}
+          alt="My Logo"
+          width={60}
+          height={60}
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
         <HeaderTabBar tabs={tabs} />
       </div>
       <div className={styles.homeLogo}>
