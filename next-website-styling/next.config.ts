@@ -1,9 +1,12 @@
 import createMDX from "@next/mdx";
-
+import path from "path";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  path: "",
+  turbopack: {
+    // We set the root to the directory where next.config.ts is located (__dirname)
+    root: path.join(__dirname),
+  },
 };
 
 const withMDX = createMDX({
