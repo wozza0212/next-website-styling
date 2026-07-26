@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./Header.module.css";
 import HeaderTabBar from "../HeaderTabBar/HeaderTabBar";
 import { HeaderTabProps } from "../HeaderTab/HeaderTab";
