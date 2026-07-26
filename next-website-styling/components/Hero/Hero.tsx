@@ -34,11 +34,8 @@ const HeroSection = () => {
             src="/Images/HomePageImage/profile.JPG"
             alt="Hero Image"
             fill
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              objectFit: "cover"
-            }} />
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </div>
       </section>
     </div>

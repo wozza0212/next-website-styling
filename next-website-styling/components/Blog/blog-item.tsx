@@ -30,11 +30,9 @@ const BlogItem: FunctionComponent<Props> = (props: Props) => {
               alt={post.title}
               fill
               className="rounded-lg hover:cursor-pointer"
-              style={{
-                objectFit: "cover",
-                maxWidth: "100%",
-                height: "auto"
-              }} />
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="eager"
+            />
           </div>
         </div>
         <div className="mt-4 flex justify-between">
