@@ -1,7 +1,7 @@
 "use client";
 import styles from "./HeaderTab.module.css";
 import { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import dropdownIcon from "../../../public/dropdown-icon.svg";
 export interface HeaderTabProps {
   title: string;
@@ -38,7 +38,10 @@ const HeaderTab = ({ title, href, multiLinks }: HeaderTabProps) => {
             width={16}
             height={16}
             loader={imageLoader}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <div
             className={
               isOpen

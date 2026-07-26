@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { FunctionComponent } from "react";
 type Props = {
   post: BlogPost;
@@ -28,10 +28,13 @@ const BlogItem: FunctionComponent<Props> = (props: Props) => {
             <Image
               src={post.image}
               alt={post.title}
-              style={{ objectFit: "cover" }}
               fill
               className="rounded-lg hover:cursor-pointer"
-            />
+              style={{
+                objectFit: "cover",
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
         </div>
         <div className="mt-4 flex justify-between">

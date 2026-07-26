@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "./Header.module.css";
 import HeaderTabBar from "../HeaderTabBar/HeaderTabBar";
 import { HeaderTabProps } from "../HeaderTab/HeaderTab";
@@ -14,7 +14,15 @@ const HeaderComponent = ({ tabs }: HeaderProps) => {
   return (
     <header className={styles.headerComponent}>
       <div className={styles.leftSection}>
-        <Image src={myLogo} alt="My Logo" width={60} height={60} />
+        <Image
+          src={myLogo}
+          alt="My Logo"
+          width={60}
+          height={60}
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
         <HeaderTabBar tabs={tabs} />
       </div>
       <div className={styles.homeLogo}>

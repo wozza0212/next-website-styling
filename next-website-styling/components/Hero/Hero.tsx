@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 const HeroSection = () => {
   return (
@@ -34,8 +34,11 @@ const HeroSection = () => {
             src="/Images/HomePageImage/profile.JPG"
             alt="Hero Image"
             fill
-            objectFit="cover"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "cover"
+            }} />
         </div>
       </section>
     </div>
