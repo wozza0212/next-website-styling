@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import BlogItem from "./blog-item";
 import { getBlogs } from "../../lib/blogs";
-
 import { Blog } from "../../interfaces/Blog";
+import styles from "./blog-list.module.css";
 
 type BlogPageProps = {
   blogs: Blog[];
@@ -19,7 +19,7 @@ export const fetchBlogs = async (): Promise<object> => {
 
 const BlogList: NextPage<BlogPageProps> = async ({ blogs }) => {
   return (
-    <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+    <div className={styles.blogListContainer}>
       {blogs.map((post: Blog, index: number) => (
         <BlogItem post={post} index={index} key={index} />
       ))}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FunctionComponent } from "react";
+import styles from "./blog-item.module.css";
 type Props = {
   post: BlogPost;
   index: number;
@@ -18,7 +19,7 @@ type BlogPost = {
 const BlogItem: FunctionComponent<Props> = (props: Props) => {
   const { post, index } = props;
   return (
-    <div className="group border rounded-lg p-4 bg-gray-100 h-100 hover:bg-gray-300 transition duration-300 ease-in-out">
+    <div className={styles.blogItemContainer}>
       <Link href={`/blog/${post.slug}`}>
         <div
           key={index}
