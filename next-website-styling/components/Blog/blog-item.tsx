@@ -21,31 +21,21 @@ const BlogItem: FunctionComponent<Props> = (props: Props) => {
   return (
     <div className={styles.blogItemContainer}>
       <Link href={`/blog/${post.slug}`}>
-        <div
-          key={index}
-          className="h-80 aspect-w-1 aspect-h-1 w-full rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-40"
-        >
-          <div className="relative h-80 aspect-w-1 aspect-h-1 w-full rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-40">
+        <div key={index} className={styles.allContent}>
+          <div className={styles.blogImageContainer}>
             <Image
+              className={styles.blogImage}
               src={post.image}
               alt={post.title}
-              fill
-              className="rounded-lg hover:cursor-pointer"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               loading="eager"
+              width={180}
+              height={180}
             />
           </div>
-        </div>
-        <div className="mt-4 flex justify-between">
-          <div>
-            <h2 className="text-lg text-black font-bold h-20">{post.title}</h2>
-            <h2 className="text-sm text-white font-bold h-0.5">
-              {post.author}
-            </h2>
-            <p className="mt-1 text-md text-gray-900">{post.date}</p>
-            <p className="mt-1 text-md text-gray-900 line-clamp-3">
-              {post.description}
-            </p>
+          <div className={styles.blogContent}>
+            <h4 className={styles.blogTitle}>{post.title}</h4>
+            <p className={styles.blogDate}>{post.date}</p>
+            <p className={styles.blogDescription}>{post.description}</p>
           </div>
         </div>
       </Link>
