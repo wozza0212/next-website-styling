@@ -32,6 +32,7 @@ const BlogItem: FunctionComponent<Props> = (props: Props) => {
               height={180}
             />
           </div>
+          <div></div>
           <div className={styles.blogContent}>
             <h4 className={styles.blogTitle}>{post.title}</h4>
             <p className={styles.blogDate}>{post.date}</p>

@@ -16,7 +16,8 @@
     background-color: #d1d5db;
   }
   border-top: 1px solid #171717;
-  border-right: 1px solid #171717;
+  border-left: 1px solid #171717;
+  box-shadow: 4px 4px #171717;
 }
 
 .allContent {
@@ -31,6 +32,16 @@
 .blogImageContainer {
   width: 180px;
   height: 180px;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blogImage {
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
 }
 
 .blogContent {
