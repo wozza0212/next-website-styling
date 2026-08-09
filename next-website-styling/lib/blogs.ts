@@ -4,6 +4,7 @@ import {
   getItemInPath,
   getAllItems,
   markdownToHTML,
+  getNumberOfItems,
 } from "./markdown";
 import { Blog } from "../interfaces/Blog";
 
@@ -25,9 +26,11 @@ const getAllBlogSlugs = () => {
   // return getBlogFileNames().map((fileName) => fileName.replace(/\.md$/, ""));
 };
 
-const getBlogs = (): Blog[] => {
+const getBlogs = (number?: number): Blog[] => {
   const blogFileNames = getBlogFileNames();
-  return getAllItems(blogFileNames, getBlog) as Blog[];
+  return number
+    ? (getNumberOfItems(blogFileNames, getBlog, number) as Blog[])
+    : (getAllItems(blogFileNames, getBlog) as Blog[]);
 };
 
 const getBlogBySlug = (slug: string): Blog => {

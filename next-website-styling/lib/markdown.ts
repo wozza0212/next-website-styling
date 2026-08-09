@@ -6,7 +6,6 @@ import html from "remark-html";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 
-
 const getFileNames = (dir: string): string[] => {
   return fs.readdirSync(dir);
 };
@@ -29,6 +28,15 @@ const getAllItems = (
   return items;
 };
 
+const getNumberOfItems = (
+  filenames: string[],
+  get: (name: string) => MarkdownItem,
+  number: number,
+) => {
+  const items = filenames.map((filename) => get(filename));
+  return items.slice(0, number);
+};
+
 const markdownToHTML = async (markdown: string) => {
   const result = await remark().use(html).use(remarkGfm).process(markdown);
   return result.toString();
@@ -40,4 +48,5 @@ export {
   getDirectory,
   getAllItems,
   markdownToHTML,
+  getNumberOfItems,
 };
