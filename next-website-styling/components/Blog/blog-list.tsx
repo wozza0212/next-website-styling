@@ -6,6 +6,7 @@ import styles from "./blog-list.module.css";
 
 type BlogPageProps = {
   blogs: Blog[];
+  layout: "standard" | "compact";
 };
 
 export const fetchBlogs = async (): Promise<object> => {
@@ -17,12 +18,14 @@ export const fetchBlogs = async (): Promise<object> => {
   };
 };
 
-const BlogList: NextPage<BlogPageProps> = async ({ blogs }) => {
+const BlogList: NextPage<BlogPageProps> = async ({ blogs, layout }) => {
   return (
-    <div className={styles.blogListContainer}>
-      {blogs.map((post: Blog, index: number) => (
-        <BlogItem post={post} index={index} key={index} />
-      ))}
+    <div className={styles[layout]}>
+      <div className={styles.blogListContainer}>
+        {blogs.map((post: Blog, index: number) => (
+          <BlogItem post={post} index={index} key={index} />
+        ))}
+      </div>
     </div>
   );
 };

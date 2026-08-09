@@ -9,7 +9,7 @@ const Blog: NextPage = () => {
     <main className="flex min-h-screen flex-col items-center justify-between p-8">
       <div>
         <h2>Blog page content</h2>
-        <BlogList blogs={blogs} />
+        <BlogList blogs={blogs} layout="standard" />
       </div>
     </main>
   );
