@@ -1,4 +1,4 @@
-import BlogList from "@/components/Blog/blog-list";
+import BlogList from "@/components/Blog/BlogList/blog-list";
 import { getBlogs } from "../../lib/blogs";
 import { NextPage } from "next";
 // import BaseLayout from "@/components/Layouts/base-layout";

@@ -5,6 +5,7 @@ import styles from "./blog-item.module.css";
 type Props = {
   post: BlogPost;
   index: number;
+  layout: "standard" | "compact";
 };
 
 type BlogPost = {
@@ -17,9 +18,9 @@ type BlogPost = {
 };
 
 const BlogItem: FunctionComponent<Props> = (props: Props) => {
-  const { post, index } = props;
+  const { post, index, layout } = props;
   return (
-    <div className={styles.blogItemContainer}>
+    <div className={styles[layout]}>
       <Link href={`/blog/${post.slug}`}>
         <div key={index} className={styles.allContent}>
           <div className={styles.blogImageContainer}>
