@@ -1,0 +1,103 @@
+.standard {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  height: 20vh;
+  min-height: 200px;
+  border-radius: 0.5rem;
+  width: 100%;
+  background-color: #f3f4f6;
+  transition-property:
+    background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-duration: 300ms;
+  &:hover {
+    background-color: #d1d5db;
+  }
+  border-top: 1px solid #171717;
+  border-left: 1px solid #171717;
+  box-shadow: 4px 4px #171717;
+}
+
+.allContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: auto;
+  min-height: 200px;
+  /* border: 2px solid yellow; */
+}
+
+.blogImageContainer {
+  width: 180px;
+  height: 180px;
+  height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blogImage {
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.blogContent {
+  width: 50vw;
+  flex: 1 1;
+  padding-left: 1rem;
+  /* border: 2px solid green; */
+}
+
+.compact {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  height: 20vh;
+  min-height: 200px;
+  border-radius: 0.5rem;
+  width: 100%;
+  background-color: #f3f4f6;
+  transition-property:
+    background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transition-duration: 300ms;
+  &:hover {
+    background-color: #d1d5db;
+  }
+
+  .allContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: auto;
+    min-height: 200px;
+    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
+  }
+
+  .blogImageContainer {
+    width: 180px;
+    height: 180px;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blogImage {
+    width: auto;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .blogContent {
+    width: 50vw;
+    flex: 1 1;
+    padding-left: 1rem;
+    /* border: 2px solid green; */
+  }
+}

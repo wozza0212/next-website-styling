@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import BlogItem from "./blog-item";
-import { getBlogs } from "../../lib/blogs";
-import { Blog } from "../../interfaces/Blog";
+import BlogItem from "./../BlogItem/blog-item";
+import { getBlogs } from "../../../lib/blogs";
+import { Blog } from "../../../interfaces/Blog";
 import styles from "./blog-list.module.css";
 
 type BlogPageProps = {
@@ -23,7 +23,7 @@ const BlogList: NextPage<BlogPageProps> = async ({ blogs, layout }) => {
     <div className={styles[layout]}>
       <div className={styles.blogListContainer}>
         {blogs.map((post: Blog, index: number) => (
-          <BlogItem post={post} index={index} key={index} />
+          <BlogItem post={post} index={index} key={index} layout={layout} />
         ))}
       </div>
     </div>

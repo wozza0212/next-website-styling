@@ -1,5 +1,5 @@
-import BlogList from "@/components/Blog/blog-list";
 import HeroSection from "@/components/Hero/Hero";
+import BlogList from "@/components/Blog/BlogList/blog-list";
 import { getBlogs } from "@/lib/blogs";
 
 export default function Home() {
