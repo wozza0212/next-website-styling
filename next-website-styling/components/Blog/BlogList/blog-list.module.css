@@ -14,14 +14,15 @@
 
 .compact {
   .blogListContainer {
+    margin: 1rem auto;
     width: 80vw;
+    max-width: 1400px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     /* padding: 0.5rem 0.5rem; */
     grid-gap: 1rem;
-    border: 1px solid red;
     padding: 1rem;
   }
 }
