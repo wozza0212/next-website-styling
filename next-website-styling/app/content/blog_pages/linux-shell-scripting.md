@@ -1,3 +1,11 @@
+---
+title: "Vagrant Basic Commands"
+description: A few basic commands and config needed for setting up vagrant 
+image: /Images/BlogTitles/mdlogo.png
+date: "2022-05-20"
+---
+
+
 ### Creating virtual machine
 
 run command
@@ -26,7 +34,7 @@ vagrant status
 vagrant ssh
 ```
 
-This coonnects you to the avgrant machine as the vagrant user
+This connects you to the avgrant machine as the vagrant user
 
 To exit this account run the command
 
