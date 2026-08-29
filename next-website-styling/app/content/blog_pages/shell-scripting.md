@@ -56,3 +56,40 @@ do
 done
 ```
 
+This can also be done without using a variable
+
+```
+#!/bin/bash
+
+for COLOUR in red green blue yellow
+do
+    echo "The colour is $COLOUR"
+done
+```
+
+### Positional Paramaters
+
+This script will clear the users.txt file, and add the new users to the file
+
+```
+#!/bin/bash
+
+echo script name is $0
+echo creating a new directory called new-users
+mkdir new-users
+echo clearing the contents of users.txt
+> ./new-users/users.txt
+for USER in $@
+do
+    echo adding $USER to users.txt
+    echo $USER >> ./new-users/users.txt
+done
+echo all users have been added to ./new-users/users.txt
+
+```
+
+This scriupt would be ran with command...
+```
+./outputUserName.sh Jim Tom
+```
+
