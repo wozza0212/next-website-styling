@@ -111,3 +111,110 @@ run command
 ```
 ls /vagrant
 ```
+
+### View all files in directory
+
+run commmand
+
+```
+ls -l
+```
+
+When you run the `ls -l` command, the characters at the beginnning onf the line tell you the permissions the file has, as an example
+this file:
+>-rw-r--r-- 1 vagrant vagrant  100 Aug 30  2026 luser-demo01.sh
+Broken up this means
+- `rw-` The owner has read and write permissions to this file
+- `r--` the group of the file have read permissions
+- `r--` Everyone else on the system has read permissions
+
+So in this instance, the vagrant user has read write permissions, the vagrant group has read permissions, and everyone else has read permissions
+
+#### Allow execute script permisions
+
+to change the permissions of the file, and allow a user to execute the script, there are two ways
+
+```
+chmod +x ./<FileName>
+```
+or
+
+```
+chmod 755 <FileName>
+```
+
+Once running this, `ls -l` returns
+>-rwxr-xr-x 1 vagrant vagrant  100 Aug 30 11:26 luser-demo01.sh
+
+### Creating file with vim
+
+To create a file with vim you can run
+
+```
+vim <filename>
+```
+
+Now to edit file, press `i` so you seee insert on the terminal, and the hit `:wq` after editing to save and close
+
+### Executing the script
+
+run command
+```
+./<FileName>
+```
+
+### Renaming a file
+You can easily rename a file with the `mv` command
+
+```
+mv <FileName> <NewFileName>
+```
+
+### Checking types of shell commands
+
+`type` tells you what type of command something is
+
+```
+type echo
+```
+> echo is a shell builtin
+
+Here we are told echo is a shell builtin, which means this commmand comes built in with the shell
+
+You can get more information about shell buildins using the `help` command
+
+```
+help echo
+```
+
+Come commands aren't shell built ins, such as uptime
+
+```
+type uptime
+```
+>uptime is /usr/bin/uptime
+
+The help command wont work with these, but you an use the `man` command to poutput the manual
+```
+man -a uptime
+```
+
+### Variables
+
+When accessing vairables that are defined, it's important to always use. a double quote `"`, nad the variable when being accessed should always be preceeded by a `$` sign
+
+```
+#!/bin/bash
+
+# this script displays various information to the screen
+# display hello
+
+echo 'hello'
+WORD='script'
+
+# Display variable
+echo "$WORD"
+```
+
+
+
