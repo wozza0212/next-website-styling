@@ -206,15 +206,71 @@ When accessing vairables that are defined, it's important to always use. a doubl
 ```
 #!/bin/bash
 
-# this script displays various information to the screen
-# display hello
-
-echo 'hello'
 WORD='script'
 
 # Display variable
 echo "$WORD"
 ```
+>script
 
+If we had put `echo '$WORD'` the output would have been
+> $WORD
 
+If appending something directly to the end or beginning of the variable, we have to use this syntax
 
+```
+#!/bin/bash
+WORD='script'
+
+# Display appended variable 
+echo "${WORD}ing with variables"
+```
+>scripting with variables
+
+### the User ID
+
+The user ID is a built in variable, as you can see below we can run this scirpt and it outputs the UID without setting it
+
+```
+# Display the UID and username of user executing this script
+# Display if this is root user
+
+# display UID
+
+echo "Your UID is ${UID}"
+
+```
+> Your UID is 1000
+
+You can run the command `whoami` to get the current username
+
+### Running commands as root
+
+You can run commands as root using the `sudo` command
+
+```
+#!/bin/bash
+
+# Display the UID and username of user executing this script
+# Display if this is root user
+
+# display UID
+
+echo "Your UID is ${UID}"
+
+USERNAME=$(id -un)
+echo "Your username is ${USERNAME}"
+
+if [[ "${UID}" -eq 0 ]]
+then
+  echo 'You are Root'
+else
+  echo 'You are not Root'
+fi
+```
+
+Running this script with command `sudo ./script.sh` returns
+
+>Your UID is 0
+>Your username is root
+>You are Root
